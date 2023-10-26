@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 
+
 defineProps({
   canLogin: Boolean,
   canRegister: Boolean,
@@ -292,6 +293,45 @@ defineProps({
         </div>
       </div>
     </div>
+    <section class="bg-gray-900 flex justify-center dark:bg-gray-900">
+      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+        <carousel :items-to-show="1.4">
+          <slide v-for="person in people" :key="person">
+            <figure class="max-w-screen-md mx-auto">
+              <svg
+                class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                viewBox="0 0 24 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <blockquote>
+                <p
+                  class="text-2xl font-medium text-gray-900 dark:text-white"
+                >"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+              </blockquote>
+              <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                <img
+                  class="w-6 h-6 rounded-full"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                  alt="profile picture"
+                />
+                <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                  <div class="pr-3 font-medium text-gray-900 dark:text-white">{{person.name}}</div>
+                  <div
+                    class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400"
+                  >CEO at Google</div>
+                </div>
+              </figcaption>
+            </figure>
+          </slide>
+        </carousel>
+      </div>
+    </section>
     <div class="bg-gray-900 py-24 sm:py-32">
       <div class="relative isolate">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -305,7 +345,7 @@ defineProps({
             />
             <div class="w-full flex-auto">
               <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Join us now</h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300">
+              <p class="mt-6 text-lg leading-8 text-gray-100">
                 Lorem ipsum dolor sit amet consect adipisicing
                 elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
               </p>
@@ -463,3 +503,27 @@ defineProps({
   }
 }
 </style>
+
+<script>
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+export default {
+  name: 'App',
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
+  data(){ return {
+    people: [
+      { name: 'Vishal Singh'},
+      { name: 'John Smith'},
+      { name: 'John Doe'},
+    ]
+  }
+}
+}
+</script>
