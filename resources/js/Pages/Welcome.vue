@@ -318,7 +318,7 @@ defineProps({
                 />
               </svg0>
               <blockquote>
-                <p class="lg:text-2xl sm:text-2xl font-medium text-white">{{ person.text }}</p>
+                <p class="lg:text-2xl sm:text-xl font-medium text-white">{{ person.text }}</p>
               </blockquote>
               <figcaption class="flex items-center justify-center mt-6 space-x-3">
                 <img
