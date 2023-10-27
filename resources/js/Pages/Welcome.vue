@@ -1,7 +1,6 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 
-
 defineProps({
   canLogin: Boolean,
   canRegister: Boolean,
@@ -148,7 +147,7 @@ defineProps({
 
       <div class="md:flex">
         <div class="lg-m:mt-4 drop-shadow-lg md:mr-4">
-          <div class="bg-white pt-1 pb-3 w-full relative shadow px-2 rounded-3xl">
+          <div class="bg-white pt-1 pb-3 shadow px-2 rounded-3xl  w-[320px]">
             <div class="absolute top-5 left-2 pointer-events-none inset-y-0 pl-3">
               <img
                 src="../../../public/img/bolt.png"
@@ -200,8 +199,8 @@ defineProps({
         </div>
 
         <div class="lg-m:mt-4 drop-shadow-lg">
-          <div class="bg-white pb-3 pt-1 w-full relative shadow px-2 rounded-3xl">
-            <div class="absolute top-5 left-2 pointer-events-none inset-y-0 pl-3">
+          <div class="bg-white pb-3 pt-1 md:w-auto md:h-auto shadow px-2 rounded-3xl">
+            <div class="absolute top-5 h-6 left-2 pointer-events-none inset-y-0 pl-3">
               <img
                 src="../../../public/img/workersetting.png"
                 class="h-7 w-7 text-green-400"
@@ -248,7 +247,7 @@ defineProps({
           </div>
         </div>
         <div class="lg-m:my-4 drop-shadow-lg md:ml-4">
-          <div class="bg-white pt-1 pb-3 w-full shadow relative px-2 rounded-3xl">
+          <div class="bg-white pb-3 pt-1 md:w-auto md:h-auto shadow px-2 rounded-3xl">
             <div class="absolute top-5 left-2 pointer-events-none inset-y-0 pl-3">
               <img
                 src="../../../public/img/crown.png"
@@ -293,11 +292,20 @@ defineProps({
         </div>
       </div>
     </div>
-    <section class="bg-gray-900  dark:bg-gray-900">
+    <section class="bg-gray-900">
+      <div class>
+        <h1
+          class="mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+        >We invest in the world’s potential</h1>
+        <p
+          class="mb-6 text-lg text-center font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+        >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+      </div>
+
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <carousel :items-to-show="1.5" wrapAround="true">
           <slide v-for="person in people" :key="person">
-            <figure class="max-w-screen-md mx-auto ">
+            <figure class="max-w-screen-md mx-4">
               <svg0
                 class="h-12 mx-auto mb-3 text-gray-600"
                 viewBox="0 0 24 27"
@@ -310,9 +318,7 @@ defineProps({
                 />
               </svg0>
               <blockquote>
-                <p
-                  class="text-2xl font-medium text-white"
-                >{{ person.text }}</p>
+                <p class="lg:text-2xl sm:text-2xl font-medium text-white">{{ person.text }}</p>
               </blockquote>
               <figcaption class="flex items-center justify-center mt-6 space-x-3">
                 <img
@@ -322,9 +328,7 @@ defineProps({
                 />
                 <div class="flex items-center divide-x-2 divide-gray-700">
                   <div class="pr-3 font-medium text-white">{{person.name}}</div>
-                  <div
-                    class="pl-3 text-sm font-light text-gray-400"
-                  >CEO at Google</div>
+                  <div class="pl-3 text-sm font-light text-gray-400">CEO at Google</div>
                 </div>
               </figcaption>
             </figure>
@@ -506,24 +510,37 @@ defineProps({
 
 <script>
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Carousel,
     Slide,
     Pagination,
-    Navigation,
+    Navigation
   },
-  data(){ return {
-    people: [
-      { name: 'Vishal Singh',text: "Phasor has code in one place and I'm not joking when I say it took me a matter of minutes to copy the code, customise it and integrate within a Laravel + Vue application."},
-      { name: 'John Smith', text: "As someone who mainly designs in the browser, I've been a casual user of Figma, but as soon as I saw and started playing with FlowBite my mind was blown and became so productive."},
-      { name: 'John Doe',text:"This is a very complex and beautiful set of elements. Under the hood it comes with the best things from 2 different worlds: Figma and Tailwind."},
-    ]
+  data() {
+    return {
+      people: [
+        {
+          name: "Vishal Singh",
+          text:
+            "Phasor has code in one place and I'm not joking when I say it took me a matter of minutes to copy the code, customise it and integrate within a Laravel + Vue application."
+        },
+        {
+          name: "John Smith",
+          text:
+            "As someone who mainly designs in the browser, I've been a casual user of Figma, but as soon as I saw and started playing with FlowBite my mind was blown and became so productive."
+        },
+        {
+          name: "John Doe",
+          text:
+            "This is a very complex and beautiful set of elements. Under the hood it comes with the best things from 2 different worlds: Figma and Tailwind."
+        }
+      ]
+    };
   }
-}
-}
+};
 </script>
