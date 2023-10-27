@@ -312,7 +312,7 @@ defineProps({
               <blockquote>
                 <p
                   class="text-2xl font-medium text-white"
-                >"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+                >{{ person.text }}</p>
               </blockquote>
               <figcaption class="flex items-center justify-center mt-6 space-x-3">
                 <img
@@ -519,9 +519,9 @@ export default {
   },
   data(){ return {
     people: [
-      { name: 'Vishal Singh'},
-      { name: 'John Smith'},
-      { name: 'John Doe'},
+      { name: 'Vishal Singh',text: "Phasor has code in one place and I'm not joking when I say it took me a matter of minutes to copy the code, customise it and integrate within a Laravel + Vue application."},
+      { name: 'John Smith', text: "As someone who mainly designs in the browser, I've been a casual user of Figma, but as soon as I saw and started playing with FlowBite my mind was blown and became so productive."},
+      { name: 'John Doe',text:"This is a very complex and beautiful set of elements. Under the hood it comes with the best things from 2 different worlds: Figma and Tailwind."},
     ]
   }
 }
